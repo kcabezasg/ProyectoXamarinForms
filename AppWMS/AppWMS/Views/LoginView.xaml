@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppWMS.Views.LoginView">
+    <StackLayout VerticalOptions="Center" BackgroundColor="White">
+        <ScrollView>
+            <StackLayout>
+                <Image Source="Logo" HeightRequest="250"  HorizontalOptions="Center"/>
+
+                <StackLayout Padding="40" Spacing="20">
+                    <Entry Text="{Binding User.Email}"
+                           Placeholder="Email address"
+                           HeightRequest="40"/>
+
+                    <Entry Text="{Binding User.Password}"
+                           IsPassword="True"
+                           Placeholder="Password"
+                           HeightRequest="40"  />
+
+                    <Button Text="Log in"
+                            HeightRequest="40"
+                            BackgroundColor="#0027a0"
+                            TextColor="White"
+                            FontSize="Medium"
+                            CornerRadius="5"
+                            Command="{Binding LoginCommand}"/>
+                    
+                  
+
+                    <Grid Grid.Row="1" Margin="0,30" ColumnSpacing="0" RowSpacing="0" HorizontalOptions="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="25" />
+                            <ColumnDefinition Width="200" />
+                    
+                        </Grid.ColumnDefinitions>
+
+                        <StackLayout>
+                            <CheckBox>
+                                <VisualStateManager.VisualStateGroups >
+                                    <VisualStateGroup x:Name="CommonStates" >
+                                        <VisualState x:Name="Normal" >
+                                            <VisualState.Setters>
+                                                <Setter Property="Color"
+                            Value="Red" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                        <VisualState x:Name="IsChecked">
+                                            <VisualState.Setters>
+                                                <Setter Property="Color"
+                            Value="Green" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </CheckBox>
+                        </StackLayout>
+
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Remember password" FontSize="18"
+                           HorizontalOptions="Center"/>
+                           
+                        </StackLayout>
+
+                 
+                    </Grid>
+                   
+
+                 
+
+
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
+
+
+    </StackLayout>
+</ContentPage>
